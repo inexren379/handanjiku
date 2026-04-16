@@ -1,0 +1,249 @@
+
+<style>
+.principles-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:4px 0}
+.p-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-left:3px solid;border-radius:0 12px 12px 0;padding:14px 16px}
+.p-card.blue{border-left-color:#185FA5}
+.p-card.teal{border-left-color:#0F6E56}
+.p-card.amber{border-left-color:#854F0B}
+.p-card.purple{border-left-color:#534AB7}
+.p-num{font-size:11px;font-weight:500;color:var(--color-text-tertiary);margin:0 0 4px;letter-spacing:.05em}
+.p-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin:0 0 6px}
+.p-body{font-size:12px;color:var(--color-text-secondary);margin:0;line-height:1.6}
+.p-why{font-size:11px;color:var(--color-text-tertiary);margin:6px 0 0;padding:6px 8px;background:var(--color-background-secondary);border-radius:6px;line-height:1.5}
+.p-why b{color:var(--color-text-secondary);font-weight:500}
+.p-tag{display:inline-block;font-size:11px;background:var(--color-background-secondary);color:var(--color-text-tertiary);border-radius:4px;padding:1px 6px;margin-top:6px}
+.section-label{font-size:11px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:.08em;margin:16px 0 8px;padding-bottom:4px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.flow-wrap{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:16px;margin:4px 0 16px}
+.flow-row{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap}
+.flow-box{flex:1;min-width:80px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:8px 10px;text-align:center}
+.flow-box.ok{border-color:#0F6E56;background:#E1F5EE}
+.flow-box.check{border-color:#854F0B;background:#FAEEDA}
+.flow-box.expand{border-color:#534AB7;background:#EEEDFE}
+.flow-box-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin:0 0 2px}
+.flow-box-sub{font-size:11px;color:var(--color-text-secondary);margin:0;line-height:1.4}
+.flow-arrow{display:flex;align-items:center;font-size:14px;color:var(--color-text-tertiary);flex-shrink:0;align-self:center}
+.flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.branch-box{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:8px 10px;text-align:center}
+.branch-box.good{border-color:#0F6E56;background:#E1F5EE}
+.branch-box.bad{border-color:#993C1D;background:#FAECE7}
+.badge-ok{display:inline-block;font-size:10px;background:#E1F5EE;color:#0F6E56;border-radius:4px;padding:1px 5px;margin-bottom:4px}
+.badge-ng{display:inline-block;font-size:10px;background:#FAECE7;color:#993C1D;border-radius:4px;padding:1px 5px;margin-bottom:4px}
+.badge-next{display:inline-block;font-size:10px;background:#EEEDFE;color:#534AB7;border-radius:4px;padding:1px 5px;margin-bottom:4px}
+</style>
+
+<h2 class="sr-only">広告運用の原則一覧と横展開フロー。判断軸・改善・最適化・姿勢の4カテゴリと、全指標良好時の横展開フローを含む。</h2>
+
+<div class="section-label">全指標確認フロー（配信開始後）</div>
+<div class="flow-wrap">
+  <div class="flow-row">
+    <div class="flow-box check">
+      <div class="flow-box-title">CPA</div>
+      <div class="flow-box-sub">目標ライン内か</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box check">
+      <div class="flow-box-title">FN移行単価</div>
+      <div class="flow-box-sub">FN1→FN2→SL</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box check">
+      <div class="flow-box-title">CVR（成約率）</div>
+      <div class="flow-box-sub">SL→成約</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box check">
+      <div class="flow-box-title">判定</div>
+      <div class="flow-box-sub">全部OK？</div>
+    </div>
+  </div>
+  <div class="flow-branch" style="margin-top:10px">
+    <div class="branch-box bad">
+      <div class="badge-ng">どこかNG</div>
+      <div class="flow-box-title" style="font-size:12px">要因分解へ</div>
+      <div class="flow-box-sub">LP→オーディエンス→CRの順に疑う</div>
+    </div>
+    <div class="branch-box good">
+      <div class="badge-ok">全部OK</div>
+      <div class="flow-box-title" style="font-size:12px">横展開フローへ</div>
+      <div class="flow-box-sub">下記フロー参照</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">横展開フロー（全指標が良いとき）</div>
+<div class="flow-wrap">
+  <div class="flow-row">
+    <div class="flow-box ok">
+      <div class="flow-box-title">当たり訴求を特定</div>
+      <div class="flow-box-sub">どの軸が刺さったか言語化</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box ok">
+      <div class="flow-box-title">ターゲット解像度を上げる</div>
+      <div class="flow-box-sub">反応層の属性を分析</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box expand">
+      <div class="flow-box-title">同訴求でCRを増やす</div>
+      <div class="flow-box-sub">新規セット複製で追加</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box expand">
+      <div class="flow-box-title">予算を増額</div>
+      <div class="flow-box-sub">週20%以内ずつ</div>
+    </div>
+  </div>
+  <div style="margin-top:8px;padding:8px 10px;background:var(--color-background-secondary);border-radius:8px;font-size:11px;color:var(--color-text-tertiary);line-height:1.6">
+    <b style="color:var(--color-text-secondary)">注意：</b>横展開は必ずCPA達成後に実施。好調セットには追加せず新規セット複製で検証。予算増額と横展開は同時に行わない。
+  </div>
+</div>
+
+<div class="section-label">判断軸</div>
+<div class="principles-grid">
+
+<div class="p-card blue">
+<div class="p-num">原則 01</div>
+<div class="p-title">CPAが唯一の判断軸</div>
+<div class="p-body">CTRが低くてもCPAが目標内なら良い広告。CPAが目標超えなら停止対象。感情ではなく数値で判断する。</div>
+<span class="p-tag">最優先</span>
+</div>
+
+<div class="p-card blue">
+<div class="p-num">原則 02</div>
+<div class="p-title">消化金額で判断する</div>
+<div class="p-body">初動は目標CPAの2倍、コンセプト検証は商品単価の2倍を消化してから判断する。</div>
+<span class="p-tag">タイミング</span>
+</div>
+
+<div class="p-card blue">
+<div class="p-num">原則 03</div>
+<div class="p-title">CPAが未達のときだけ深掘りする</div>
+<div class="p-body">CPM・CTR・CVRはCPAが目標未達のときだけ見る。CPAが良ければ他の指標は無視してよい。</div>
+<span class="p-tag">要因分解</span>
+</div>
+
+<div class="p-card blue">
+<div class="p-num">原則 04</div>
+<div class="p-title">疑う順番はLP→オーディエンス→CR</div>
+<div class="p-body">数値が悪いとき、まずLPの登録率、次にオーディエンスの合致度、最後にクリエイティブを疑う。</div>
+<div class="p-why"><b>なぜ：</b>LPは全流入に影響するため改善インパクトが最大。CRは制作コストが高く、最後に検証する方が効率的。</div>
+<span class="p-tag">改善順序</span>
+</div>
+
+<div class="p-card blue">
+<div class="p-num">原則 05</div>
+<div class="p-title">移行率より移行単価で見る</div>
+<div class="p-body">FN移行率は母数が少ないと精度が低い。移行単価（消化金額÷移行数）で見ると早期に良し悪しが判断できる。</div>
+<span class="p-tag">ファネル管理</span>
+</div>
+
+<div class="p-card blue">
+<div class="p-num">原則 06</div>
+<div class="p-title">広告とマーケの責任範囲を分ける</div>
+<div class="p-body">CPAは取れているのに売れない場合はファネル・コンセプト側の問題として切り分ける。</div>
+<span class="p-tag">責任範囲</span>
+</div>
+
+</div>
+
+<div class="section-label">クリエイティブ・改善</div>
+<div class="principles-grid">
+
+<div class="p-card teal">
+<div class="p-num">原則 07</div>
+<div class="p-title">広告は「当たるまで高速で試行を回す」</div>
+<div class="p-body">最初から正解を決めない。仮説を立てて出稿し、数値を見て次を決める。検証スピードが成果を決める。</div>
+<span class="p-tag">基本姿勢</span>
+</div>
+
+<div class="p-card teal">
+<div class="p-num">原則 08</div>
+<div class="p-title">横展開はCPA達成後にしか行わない</div>
+<div class="p-body">まだCPAが取れていないCRを横展開しても意味がない。成約が出てから展開する。</div>
+<span class="p-tag">タイミング</span>
+</div>
+
+<div class="p-card teal">
+<div class="p-num">原則 09</div>
+<div class="p-title">CRの追加は新規セット複製で行う</div>
+<div class="p-body">好調な広告セットに新規CRを追加すると最適化が崩れる。新規セットを複製して追加検証するのが正しい手順。</div>
+<div class="p-why"><b>なぜ：</b>MetaのAIは既存CRのデータで最適化済み。新CRを追加すると学習がリセットされ、好調だった配信も崩れるリスクがある。</div>
+<span class="p-tag">操作手順</span>
+</div>
+
+<div class="p-card teal">
+<div class="p-num">原則 10</div>
+<div class="p-title">審査は「透明性のあるビジネス」として見せる</div>
+<div class="p-body">断定表現・金額明記・最上級表現は避け、「Metaの審査担当者になったつもりで見る」思考で確認する。</div>
+<span class="p-tag">審査対策</span>
+</div>
+
+</div>
+
+<div class="section-label">最適化・予算</div>
+<div class="principles-grid">
+
+<div class="p-card amber">
+<div class="p-num">原則 11</div>
+<div class="p-title">予算増額は週20%以内</div>
+<div class="p-body">増額タイミングは深夜0時〜午前中が推奨。夕方〜夜は避ける。急ぐ場合はセットを複製して追加出稿。</div>
+<div class="p-why"><b>なぜ20%：</b>Metaが「最適化範囲内」とみなす増幅率がこの水準。それ以上だとAIが無理な配信をして数値が荒れやすい。夕方以降は残り時間で一気に消化しようとするため避ける。</div>
+<span class="p-tag">予算管理</span>
+</div>
+
+<div class="p-card amber">
+<div class="p-num">原則 12</div>
+<div class="p-title">数値が悪いときは最適化を崩してよい</div>
+<div class="p-body">最適化を守るのは「数値が良いとき」だけ。成果が出ていない状態の最適化に価値はない。崩して検証を優先する。</div>
+<div class="p-why"><b>なぜ：</b>最適化が「悪い方向で安定」している状態を守っても意味がない。崩すデメリットより、新しい検証で改善できるメリットの方が大きい。</div>
+<span class="p-tag">最適化</span>
+</div>
+
+<div class="p-card amber">
+<div class="p-num">原則 13</div>
+<div class="p-title">認知広告でアカウントの信頼を貯める</div>
+<div class="p-body">本広告の前に500円/日の認知広告でFBページの信頼残高を積む。審査耐性が上がり本広告の通過率が高まる。</div>
+<span class="p-tag">アカウント育成</span>
+</div>
+
+<div class="p-card amber">
+<div class="p-num">原則 14</div>
+<div class="p-title">1アカウント1案件が原則</div>
+<div class="p-body">1つの広告アカウントで複数FBページを使った別案件を同時稼働させるのはリスク。複数案件は別アカウントで管理する。</div>
+<span class="p-tag">アカウント管理</span>
+</div>
+
+</div>
+
+<div class="section-label">スタンス・心得</div>
+<div class="principles-grid">
+
+<div class="p-card purple">
+<div class="p-num">原則 15</div>
+<div class="p-title">打ち手は100%にならない</div>
+<div class="p-body">Metaのアルゴリズムは日々変わる。判断基準を内製化し、自分で更新し続けることが重要。</div>
+<span class="p-tag">自走の前提</span>
+</div>
+
+<div class="p-card purple">
+<div class="p-num">原則 16</div>
+<div class="p-title">数値が良くても疑い続ける</div>
+<div class="p-body">良い数値が続いても翌月に荒れることは珍しくない。常に「なぜ」を問い続け、感覚に依存しない運用を維持する。</div>
+<span class="p-tag">継続改善</span>
+</div>
+
+<div class="p-card purple">
+<div class="p-num">原則 17</div>
+<div class="p-title">成果が出ない場合はコンセプトを疑う</div>
+<div class="p-body">改善を繰り返しても成果が出ない場合、広告の問題ではなく商品コンセプト・LPそのものの問題と判断する勇気を持つ。</div>
+<span class="p-tag">限界線</span>
+</div>
+
+<div class="p-card purple">
+<div class="p-num">原則 18</div>
+<div class="p-title">数値が少ないうちは一喜一憂しない</div>
+<div class="p-body">母数が少ない段階での数値変動は誤差の範囲。最低でも各FNに30件以上が溜まってから判断する。</div>
+<span class="p-tag">母数管理</span>
+</div>
+
+</div>
