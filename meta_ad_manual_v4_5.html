@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>広告運用 判断書 株式会社MouthEarKing</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif; background: #f7f6f3; color: #1a1a1a; font-size: 15px; line-height: 1.7; }
+  .cover { background: #1a1a1a; color: #fff; padding: 60px 40px 50px; }
+  .cover h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .cover p { color: #888; font-size: 13px; }
+  .cover .tag { display: inline-block; background: #333; color: #aaa; font-size: 11px; padding: 3px 10px; border-radius: 20px; margin-right: 6px; margin-top: 12px; }
+  nav { background: #fff; border-bottom: 1px solid #e8e5e0; padding: 0 40px; display: flex; gap: 0; overflow-x: auto; position: sticky; top: 0; z-index: 100; }
+  nav a { display: block; padding: 14px 18px; font-size: 13px; color: #666; text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; }
+  nav a:hover, nav a.active { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+  .container { max-width: 860px; margin: 0 auto; padding: 40px 40px 80px; }
+  section { display: none; }
+  section.active { display: block; }
+  h2 { font-size: 22px; font-weight: 700; margin-bottom: 6px; padding-bottom: 12px; border-bottom: 2px solid #1a1a1a; }
+  h3 { font-size: 16px; font-weight: 700; margin: 28px 0 10px; color: #1a1a1a; }
+  h4 { font-size: 14px; font-weight: 700; margin: 16px 0 6px; color: #444; }
+  p { margin-bottom: 10px; color: #333; }
+  .lead { font-size: 13px; color: #888; margin-bottom: 28px; }
+  .card { background: #fff; border: 1px solid #e8e5e0; border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; }
+  .card-title { font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .rule { background: #1a1a1a; color: #fff; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px; }
+  .rule-num { font-size: 11px; color: #666; margin-bottom: 4px; }
+  .rule-text { font-size: 15px; font-weight: 700; }
+  .rule-sub { font-size: 13px; color: #aaa; margin-top: 6px; line-height: 1.6; }
+  .flow { display: flex; flex-direction: column; gap: 0; }
+  .flow-item { display: flex; align-items: flex-start; gap: 16px; padding: 14px 0; border-bottom: 1px solid #f0ede8; }
+  .flow-item:last-child { border-bottom: none; }
+  .flow-num { width: 28px; height: 28px; min-width: 28px; background: #1a1a1a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; margin-top: 2px; }
+  .flow-content h4 { margin: 0 0 4px; font-size: 14px; }
+  .flow-content p { margin: 0; font-size: 13px; color: #555; }
+  .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .metric-card { background: #fff; border: 1px solid #e8e5e0; border-radius: 10px; padding: 16px; }
+  .metric-label { font-size: 11px; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .metric-val { font-size: 20px; font-weight: 700; color: #1a1a1a; }
+  .metric-note { font-size: 12px; color: #888; margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  th { text-align: left; padding: 8px 12px; background: #f7f6f3; font-weight: 600; border-bottom: 2px solid #e8e5e0; }
+  td { padding: 10px 12px; border-bottom: 1px solid #f0ede8; vertical-align: top; }
+  .highlight-box { background: #fffbf0; border: 1px solid #f0c860; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+  .highlight-box.danger { background: #fff5f5; border-color: #f0a0a0; }
+  .highlight-box.info { background: #f0f7ff; border-color: #90c0f0; }
+  .highlight-box.success { background: #f0fff4; border-color: #90d0a0; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } .container { padding: 24px 20px 60px; } nav { padding: 0 16px; } .cover { padding: 40px 20px 36px; } }
+  .checklist { list-style: none; }
+  .checklist li { padding: 8px 0; border-bottom: 1px solid #f0ede8; font-size: 14px; display: flex; align-items: flex-start; gap: 10px; }
+  .checklist li::before { content: '□'; font-size: 16px; color: #ccc; min-width: 20px; }
+  .checklist li:last-child { border-bottom: none; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+  .tag-item { background: #f0ede8; color: #444; font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+  hr { border: none; border-top: 1px solid #e8e5e0; margin: 28px 0; }
+  .step-block { border-left: 3px solid #1a1a1a; padding: 0 0 0 20px; margin-bottom: 28px; }
+  .step-label { font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .step-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+  .new-badge { display: inline-block; background: #1a1a1a; color: #fff; font-size: 10px; padding: 2px 7px; border-radius: 4px; margin-left: 6px; vertical-align: middle; font-weight: 700; }
+  .update-badge { display: inline-block; background: #e65100; color: #fff; font-size: 10px; padding: 2px 7px; border-radius: 4px; margin-left: 6px; vertical-align: middle; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>広告運用 判断書</h1>
+  <p>株式会社MouthEarKing｜杉江さんコンサル（2024.10〜2026.04）全16回の知見 + 社内手順書　v4</p>
+  <div>
+    <span class="tag">判断書</span>
+    <span class="tag">手順書</span>
+    <span class="tag">内製化用</span>
+    <span class="tag">2026.04 最終版</span>
+  </div>
+</div>
+
+<nav>
+  <a href="#" class="active" onclick="show('principles', this)">① 大原則</a>
+  <a href="#" onclick="show('flow', this)">② 判断フロー</a>
+  <a href="#" onclick="show('creative', this)">③ クリエイティブ・LP</a>
+  <a href="#" onclick="show('ops', this)">④ 出稿・チェックリスト</a>
+  <a href="#" onclick="show('newclient', this)">⑤ 新規案件・ヒアリング</a>
+  <a href="#" onclick="show('ref', this)">⑥ 参考資料</a>
+</nav>
+
+<div class="container">
+
+<!-- ===== ① 大原則 ===== -->
+<section id="principles" class="active">
+  <h2>大原則</h2>
+  <p class="lead">これを忘れたら全部ズレる。迷ったら必ず戻る。</p>
+
+  <style>
+  .principles-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:4px 0}
+  @media(max-width:600px){.principles-grid{grid-template-columns:1fr}}
+  .p-card{background:#fff;border:0.5px solid #e8e5e0;border-left:3px solid;border-radius:0 12px 12px 0;padding:14px 16px}
+  .p-card.blue{border-left-color:#185FA5}
+  .p-card.teal{border-left-color:#0F6E56}
+  .p-card.amber{border-left-color:#854F0B}
+  .p-card.purple{border-left-color:#534AB7}
+  .p-num{font-size:11px;font-weight:500;color:#888;margin:0 0 4px;letter-spacing:.05em}
+  .p-title{font-size:14px;font-weight:700;color:#1a1a1a;margin:0 0 6px}
+  .p-body{font-size:12px;color:#444;margin:0;line-height:1.6}
+  .p-why{font-size:11px;color:#888;margin:6px 0 0;padding:6px 8px;background:#f7f6f3;border-radius:6px;line-height:1.5}
+  .p-why b{color:#555;font-weight:600}
+  .p-tag{display:inline-block;font-size:11px;background:#f0ede8;color:#666;border-radius:4px;padding:1px 6px;margin-top:6px}
+  .section-label{font-size:11px;font-weight:700;color:#888;letter-spacing:.08em;margin:24px 0 8px;padding-bottom:4px;border-bottom:1px solid #e8e5e0;text-transform:uppercase}
+  .flow-wrap{background:#fff;border:1px solid #e8e5e0;border-radius:12px;padding:16px;margin:4px 0 16px}
+  .flow-row{display:flex;align-items:stretch;gap:6px;flex-wrap:wrap}
+  .flow-box{flex:1;min-width:80px;background:#f7f6f3;border:0.5px solid #e8e5e0;border-radius:8px;padding:8px 10px;text-align:center}
+  .flow-box.ok{border-color:#0F6E56;background:#E1F5EE}
+  .flow-box.check{border-color:#854F0B;background:#FAEEDA}
+  .flow-box.expand{border-color:#534AB7;background:#EEEDFE}
+  .flow-box.start{border-color:#185FA5;background:#E6F1FB}
+  .flow-box-title{font-size:12px;font-weight:700;color:#1a1a1a;margin:0 0 2px}
+  .flow-box-sub{font-size:11px;color:#555;margin:0;line-height:1.4}
+  .flow-arrow{display:flex;align-items:center;font-size:14px;color:#aaa;flex-shrink:0;align-self:center}
+  .flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+  .branch-box{background:#f7f6f3;border:0.5px solid #e8e5e0;border-radius:8px;padding:8px 10px;text-align:center}
+  .branch-box.good{border-color:#0F6E56;background:#E1F5EE}
+  .branch-box.bad{border-color:#993C1D;background:#FAECE7}
+  .badge-ok{display:inline-block;font-size:10px;background:#E1F5EE;color:#0F6E56;border-radius:4px;padding:1px 5px;margin-bottom:4px}
+  .badge-ng{display:inline-block;font-size:10px;background:#FAECE7;color:#993C1D;border-radius:4px;padding:1px 5px;margin-bottom:4px}
+  .grand-principle{background:#fff;border:1.5px solid #185FA5;border-radius:12px;padding:14px 16px;margin-bottom:8px}
+  .gp-label{font-size:10px;font-weight:700;color:#185FA5;letter-spacing:.08em;margin:0 0 4px;text-transform:uppercase}
+  .gp-title{font-size:15px;font-weight:700;color:#1a1a1a;margin:0 0 4px}
+  .gp-body{font-size:12px;color:#444;margin:0;line-height:1.6}
+  .budget-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+  .budget-box{background:#f7f6f3;border-radius:8px;padding:8px;text-align:center;border:0.5px solid #e8e5e0}
+  .budget-pct{font-size:20px;font-weight:700;color:#1a1a1a;margin:0}
+  .budget-label{font-size:11px;color:#555;margin:2px 0 0}
+  </style>
+
+  <div class="section-label">大原則（全ての土台）</div>
+  <div class="grand-principle">
+    <div class="gp-label">大原則 01</div>
+    <div class="gp-title">最初から正解を決めない</div>
+    <div class="gp-body">広告に事前の正解はない。仮説を立てて出稿し、市場の反応（数値）を見て次を決める。シナリオを完璧に設計してから動くビジネス設計とは根本的に異なる考え方。</div>
+  </div>
+  <div class="grand-principle">
+    <div class="gp-label">大原則 02</div>
+    <div class="gp-title">判断は必ず数値で行う。数値に感情を載せない</div>
+    <div class="gp-body">感覚・経験・期待値ではなく、数値だけが判断の根拠。数値が悪化してもパニックにならず、良くなっても油断しない。感情と数値を切り離すことが鉄則。</div>
+  </div>
+  <div class="grand-principle">
+    <div class="gp-label">大原則 03</div>
+    <div class="gp-title">良い数値はいじらない</div>
+    <div class="gp-body">好調な広告セットには触らない。予算変更・CR追加・ターゲット変更はすべて最適化を崩すリスクがある。「何かしたい」という衝動を抑えることも運用者の仕事。</div>
+  </div>
+
+  <div class="grand-principle">
+    <div class="gp-label">大原則 04</div>
+    <div class="gp-title">出稿前に必ず審査リスクを確認する。広告アカウントは「資産」。</div>
+    <div class="gp-body">出稿前にLPの内容・広告の内容がMetaの審査ポリシーに抵触していないか必ず確認する。クライアント側でLPの修正が難しい場合は「出稿できない」という選択もあり。広告アカウントは代理店の資産であり、アカウントを停止させるような広告を出すことは代理店の仕事ではない。</div>
+  </div>
+  <div class="flow-wrap">
+    <div class="flow-row">
+      <div class="flow-box start">
+        <div class="flow-box-title">事前準備</div>
+        <div class="flow-box-sub">各ファネルの目標ラインを決める</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box check">
+        <div class="flow-box-title">CPA</div>
+        <div class="flow-box-sub">最初に見る絶対軸</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box check">
+        <div class="flow-box-title">FN移行率・移行単価</div>
+        <div class="flow-box-sub">両方を同時に見る</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box check">
+        <div class="flow-box-title">CVR（成約率）</div>
+        <div class="flow-box-sub">SL→成約</div>
+      </div>
+    </div>
+    <div class="flow-branch">
+      <div class="branch-box bad">
+        <div class="badge-ng">どこかNG</div>
+        <div class="flow-box-title" style="font-size:12px">要因分解へ</div>
+        <div class="flow-box-sub">CPM・CTR・CVRを分解し<br>CR→オーディエンス→LPの順に改善</div>
+      </div>
+      <div class="branch-box good">
+        <div class="badge-ok">全部OK</div>
+        <div class="flow-box-title" style="font-size:12px">PDCAサイクルへ</div>
+        <div class="flow-box-sub">下記予算配分フロー参照</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">全指標OK時のPDCAサイクル（予算配分）</div>
+  <div class="flow-wrap">
+    <div style="font-size:12px;color:#555;margin-bottom:10px;line-height:1.6">当たりが見つかったら「当たったターゲット×CR×LPの組み合わせ」を起点に以下の配分で回す。横展開はおまけ程度に捉え、まず当たり訴求を探すことを最優先にする。</div>
+    <div class="budget-row">
+      <div class="budget-box" style="border-color:#0F6E56;background:#E1F5EE">
+        <div class="budget-pct" style="color:#0F6E56">50%</div>
+        <div class="budget-label">当たり訴求に集中<br>（最優先）</div>
+      </div>
+      <div class="budget-box" style="border-color:#534AB7;background:#EEEDFE">
+        <div class="budget-pct" style="color:#534AB7">20〜30%</div>
+        <div class="budget-label">同訴求のCRを増やす<br>（横展開）</div>
+      </div>
+      <div class="budget-box" style="border-color:#854F0B;background:#FAEEDA">
+        <div class="budget-pct" style="color:#854F0B">20〜30%</div>
+        <div class="budget-label">全く新しい訴求を検証<br>（新規開拓）</div>
+      </div>
+    </div>
+    <div style="margin-top:8px;padding:8px 10px;background:#f7f6f3;border-radius:8px;font-size:11px;color:#888;line-height:1.6">
+      <b style="color:#555">短期プロモの場合：</b>1〜2ヶ月の短期ローンチなら当たり訴求に全力投入してOK。中長期で安定運用を目指す場合は上記の配分で回し続ける。
+    </div>
+  </div>
+
+  <div class="section-label">CPAが未達のときの要因分解フロー</div>
+  <div class="flow-wrap">
+    <div style="font-size:12px;color:#555;margin-bottom:10px">CPAが悪い → CPM・CTR・CVRで要因を特定 → 改善策を実行 → それでもダメならLPを疑う</div>
+    <div class="flow-row">
+      <div class="flow-box check">
+        <div class="flow-box-title">CPMが高い</div>
+        <div class="flow-box-sub">ターゲット変更<br>オーディエンス調整</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box check">
+        <div class="flow-box-title">CTRが低い</div>
+        <div class="flow-box-sub">CRを変更<br>フック・訴求を見直す</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box check">
+        <div class="flow-box-title">CVRが低い</div>
+        <div class="flow-box-sub">CRとLPの整合性を確認<br>LP登録率を見る</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="border-color:#993C1D;background:#FAECE7;">
+        <div class="flow-box-title">何をやってもダメ</div>
+        <div class="flow-box-sub">最終手段としてLP自体を見直す</div>
+      </div>
+    </div>
+    <div style="margin-top:8px;padding:8px 10px;background:#f7f6f3;border-radius:8px;font-size:11px;color:#888;line-height:1.6">
+      <b style="color:#555">影響力の大きさ：</b>LP ＞ オーディエンス ＞ CR。ただし改善に着手する順番はCR・オーディエンスから。LPは影響が大きい分、最後の切り札として使う。
+    </div>
+  </div>
+
+  <div class="section-label">判断軸</div>
+  <div class="principles-grid">
+    <div class="p-card blue">
+      <div class="p-num">原則 01</div>
+      <div class="p-title">CPAは最初に見る絶対軸</div>
+      <div class="p-body">CPAを最初に必ず確認する。ただし「唯一」の指標ではない。CPAが20〜30%オーバーでも成約が出ていれば目標ライン自体を見直す判断もある。</div>
+      <span class="p-tag">最優先</span>
+    </div>
+    <div class="p-card blue">
+      <div class="p-num">原則 02</div>
+      <div class="p-title">消化金額で判断する</div>
+      <div class="p-body">初動は目標CPAの2倍、コンセプト検証は商品単価の2倍を消化してから判断する。期間ではなく消化金額が基準。</div>
+      <span class="p-tag">タイミング</span>
+    </div>
+    <div class="p-card blue">
+      <div class="p-num">原則 03</div>
+      <div class="p-title">CPAが未達のときだけ深掘りする</div>
+      <div class="p-body">CPM・CTR・CVRはCPAが目標未達のときだけ見る。CPAが良ければ他の指標は無視してよい。</div>
+      <span class="p-tag">要因分解</span>
+    </div>
+    <div class="p-card blue">
+      <div class="p-num">原則 04</div>
+      <div class="p-title">改善の着手順はCR→オーディエンス→LP</div>
+      <div class="p-body">影響力の大きさはLP＞オーディエンス＞CR。ただし着手する順番は逆。CRとオーディエンスから試して、何をやってもダメならLPを疑う。</div>
+      <div class="p-why"><b>なぜ：</b>LPは影響インパクトが最大だからこそ最後の切り札。CR・オーディエンスで解決できるなら変える必要はない。</div>
+      <span class="p-tag">改善順序</span>
+    </div>
+    <div class="p-card blue">
+      <div class="p-num">原則 05</div>
+      <div class="p-title">移行率と移行単価を両方見る</div>
+      <div class="p-body">移行単価（消化金額÷移行数）は早期判断に使える。ただし移行率（パーセンテージ）も必ず同時に確認する。母数は運用を続けるほど溜まるので焦らない。</div>
+      <span class="p-tag">ファネル管理</span>
+    </div>
+    <div class="p-card blue">
+      <div class="p-num">原則 06</div>
+      <div class="p-title">広告とマーケを統合的に見て改善箇所を特定する</div>
+      <div class="p-body">CPAが取れていても広告の訴求が原因で売れないケースもある。「この数値は広告で改善、この数値はマーケで改善」と統合的に判断する。</div>
+      <span class="p-tag">連携</span>
+    </div>
+  </div>
+
+  <div class="section-label">クリエイティブ・改善</div>
+  <div class="principles-grid">
+    <div class="p-card teal">
+      <div class="p-num">原則 07</div>
+      <div class="p-title">まず当たり訴求を探すことが最優先</div>
+      <div class="p-body">横展開はあくまでおまけ。当たったターゲット×CR×LPの組み合わせを見つけることが先。結果が出てから横展開・増額を考える。</div>
+      <span class="p-tag">優先順位</span>
+    </div>
+    <div class="p-card teal">
+      <div class="p-num">原則 08</div>
+      <div class="p-title">CRの追加は新規セット複製で行う</div>
+      <div class="p-body">好調な広告セットに新規CRを追加すると最適化が崩れる。新規セットを複製して追加検証するのが正しい手順。</div>
+      <div class="p-why"><b>なぜ：</b>MetaのAIは既存データで最適化済み。新CRを追加すると学習がリセットされ、好調だった配信も崩れるリスクがある。</div>
+      <span class="p-tag">操作手順</span>
+    </div>
+  </div>
+
+  <div class="section-label">最適化・予算</div>
+  <div class="principles-grid">
+    <div class="p-card amber">
+      <div class="p-num">原則 09</div>
+      <div class="p-title">予算増額は1日20%以内</div>
+      <div class="p-body">1日20%ずつ増額し、24時間おいて数値が安定していたら次の日にまた20%増額。急ぐ場合は同じセットを複製して2本走らせる。</div>
+      <div class="p-why"><b>なぜ20%：</b>Metaが最適化範囲内とみなす増幅率。それ以上だとAIが無理な配信をして数値が荒れやすい。夕方以降の増額は避ける。</div>
+      <span class="p-tag">予算管理</span>
+    </div>
+    <div class="p-card amber">
+      <div class="p-num">原則 10</div>
+      <div class="p-title">数値が悪いときは最適化を崩してよい</div>
+      <div class="p-body">最適化を守るのは「数値が良いとき」だけ。成果が出ていない状態の最適化に価値はない。崩して検証を優先する。</div>
+      <div class="p-why"><b>なぜ：</b>最適化が「悪い方向で安定」している状態を守っても意味がない。新しい検証で改善できるメリットの方が大きい。</div>
+      <span class="p-tag">最適化</span>
+    </div>
+    <div class="p-card amber">
+      <div class="p-num">原則 11</div>
+      <div class="p-title">認知広告でアカウントの信頼を貯める</div>
+      <div class="p-body">本広告の前に500円/日の認知広告でFBページの信頼残高を積む。審査耐性が上がり本広告の通過率が高まる。</div>
+      <span class="p-tag">アカウント育成</span>
+    </div>
+    <div class="p-card amber">
+      <div class="p-num">原則 12</div>
+      <div class="p-title">別媒体展開は現行媒体で売上が出てから</div>
+      <div class="p-body">予算を割って両方中途半端にするのが最もNG。Metaで売上が出る → その売上を別媒体の検証予算に充てる → 各媒体に最低月5万を確保してから展開。</div>
+      <span class="p-tag">媒体展開</span>
+    </div>
+  </div>
+
+  <div class="section-label">スタンス・心得</div>
+  <div class="principles-grid">
+    <div class="p-card purple">
+      <div class="p-num">原則 13</div>
+      <div class="p-title">打ち手は100%にならない</div>
+      <div class="p-body">Metaのアルゴリズムは日々変わる。判断基準を内製化し、情報収集と現場検証のサイクルを自分で回し続けることが重要。</div>
+      <span class="p-tag">自走の前提</span>
+    </div>
+    <div class="p-card purple">
+      <div class="p-num">原則 14</div>
+      <div class="p-title">数値が良くても疑い続ける</div>
+      <div class="p-body">好調でも翌日突然CV0になることがある。常に「なぜ」を問い続け、感覚に依存しない運用を維持する。</div>
+      <span class="p-tag">継続改善</span>
+    </div>
+    <div class="p-card purple">
+      <div class="p-num">原則 15</div>
+      <div class="p-title">各ファネルの目標ラインを最初に決める</div>
+      <div class="p-body">案件ごとにファネル構造は異なる。運用開始前にCPA・FN移行率・移行単価それぞれの目標ラインを設定しておく。これがすべての判断基準の起点になる。</div>
+      <span class="p-tag">事前設計</span>
+    </div>
+    <div class="p-card purple">
+      <div class="p-num">原則 16</div>
+      <div class="p-title">母数が少ないうちは一喜一憂しない</div>
+      <div class="p-body">母数が少ない段階での数値変動は誤差の範囲。最低でも各FNに30件以上が溜まってから判断する。早期判断はミスリードになりうる。</div>
+      <span class="p-tag">母数管理</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== ② 判断フロー ===== -->
+<section id="flow">
+  <h2>判断フロー</h2>
+  <p class="lead">出稿後はこの順番で精査する。感覚で動かない。</p>
+
+  <h3>運用判断フロー</h3>
+  <p style="font-size:13px; color:#888; margin-bottom:16px;">数値を見る順番：CPA → FN移行率 → CVR・ROAS。各段階でYES/NOを判断し、NOの時の施策は下の一覧を参照。</p>
+
+  <!-- シンプルフローチャート -->
+  <div style="background:#fff; border:1px solid #e8e5e0; border-radius:10px; padding:24px; margin-bottom:24px; overflow-x:auto;">
+    <svg width="100%" viewBox="0 0 640 500" role="img">
+      <title>Meta広告 運用判断フロー</title>
+      <desc>CPA・FN移行率・CVR/ROASの3段階判断フロー</desc>
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- START -->
+      <rect x="195" y="16" width="250" height="38" rx="19" fill="#e8e5e0" stroke="#bbb" stroke-width="0.5"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="13" font-weight="600" fill="#1a1a1a" x="320" y="40" text-anchor="middle">出稿後・数値確認</text>
+
+      <!-- ↓ -->
+      <line x1="320" y1="54" x2="320" y2="82" stroke="#888" stroke-width="1" marker-end="url(#arr)"/>
+
+      <!-- Q1 -->
+      <rect x="160" y="82" width="320" height="50" rx="8" fill="#eeedfe" stroke="#7f77dd" stroke-width="1"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="14" font-weight="700" fill="#3c3489" x="320" y="104" text-anchor="middle">① CPAは目標内か？</text>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="12" fill="#534ab7" x="320" y="122" text-anchor="middle">管理画面ではなく実数で確認する</text>
+
+      <!-- YES ↓ -->
+      <line x1="320" y1="132" x2="320" y2="192" stroke="#888" stroke-width="1" marker-end="url(#arr)"/>
+      <rect x="326" y="146" width="32" height="20" rx="4" fill="#e8f5e9"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="11" font-weight="700" fill="#2e7d32" x="342" y="160" text-anchor="middle">YES</text>
+
+      <!-- NO → -->
+      <line x1="480" y1="107" x2="556" y2="107" stroke="#888" stroke-width="1" marker-end="url(#arr)"/>
+      <rect x="486" y="92" width="28" height="20" rx="4" fill="#ffebee"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="11" font-weight="700" fill="#c62828" x="500" y="106" text-anchor="middle">NO</text>
+      <rect x="558" y="88" width="68" height="38" rx="6" fill="#faece7" stroke="#d85a30" stroke-width="0.5"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#993c1d" x="592" y="104" text-anchor="middle">施策 A</text>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="11" fill="#993c1d" x="592" y="118" text-anchor="middle">↓下記参照</text>
+
+      <!-- Q2 -->
+      <rect x="160" y="192" width="320" height="50" rx="8" fill="#eeedfe" stroke="#7f77dd" stroke-width="1"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="14" font-weight="700" fill="#3c3489" x="320" y="214" text-anchor="middle">② FN移行率は目標内か？</text>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="12" fill="#534ab7" x="320" y="232" text-anchor="middle">移行率と移行単価の両方を確認する</text>
+
+      <!-- YES ↓ -->
+      <line x1="320" y1="242" x2="320" y2="302" stroke="#888" stroke-width="1" marker-end="url(#arr)"/>
+      <rect x="326" y="256" width="32" height="20" rx="4" fill="#e8f5e9"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="11" font-weight="700" fill="#2e7d32" x="342" y="270" text-anchor="middle">YES</text>
+
+      <!-- NO → -->
+      <line x1="480" y1="217" x2="556" y2="217" stroke="#888" stroke-width="1" marker-end="url(#arr)"/>
+      <rect x="486" y="202" width="28" height="20" rx="4" fill="#ffebee"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="11" font-weight="700" fill="#c62828" x="500" y="216" text-anchor="middle">NO</text>
+      <rect x="558" y="198" width="68" height="38" rx="6" fill="#faece7" stroke="#d85a30" stroke-width="0.5"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#993c1d" x="592" y="214" text-anchor="middle">施策 B</text>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="11" fill="#993c1d" x="592" y="228" text-anchor="middle">↓下記参照</text>
+
+      <!-- Q3 -->
+      <rect x="160" y="302" width="320" height="50" rx="8" fill="#eeedfe" stroke="#7f77dd" stroke-width="1"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="14" font-weight="700" fill="#3c3489" x="320" y="324" text-anchor="middle">③ CVR・ROASは目標内か？</text>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="12" fill="#534ab7" x="320" y="342" text-anchor="middle">後ろの数値（制約・売上）まで確認する</text>
+
+      <!-- YES ↓ -->
+      <line x1="320" y1="352" x2="320" y2="412" stroke="#888" stroke-width="1" marker-end="url(#arr)"/>
+      <rect x="326" y="366" width="32" height="20" rx="4" fill="#e8f5e9"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="11" font-weight="700" fill="#2e7d32" x="342" y="380" text-anchor="middle">YES</text>
+
+      <!-- NO → -->
+      <line x1="480" y1="327" x2="556" y2="327" stroke="#888" stroke-width="1" marker-end="url(#arr)"/>
+      <rect x="486" y="312" width="28" height="20" rx="4" fill="#ffebee"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="11" font-weight="700" fill="#c62828" x="500" y="326" text-anchor="middle">NO</text>
+      <rect x="558" y="308" width="68" height="38" rx="6" fill="#faece7" stroke="#d85a30" stroke-width="0.5"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="13" font-weight="700" fill="#993c1d" x="592" y="324" text-anchor="middle">施策 C</text>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="11" fill="#993c1d" x="592" y="338" text-anchor="middle">↓下記参照</text>
+
+      <!-- GOAL -->
+      <rect x="195" y="412" width="250" height="44" rx="22" fill="#e1f5ee" stroke="#1d9e75" stroke-width="1"/>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="14" font-weight="700" fill="#085041" x="320" y="432" text-anchor="middle">現状維持</text>
+      <text font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="12" fill="#0f6e56" x="320" y="449" text-anchor="middle">+ 次のCR準備を進める</text>
+    </svg>
+  </div>
+
+  <h3>施策一覧</h3>
+
+  <div class="card" style="border-left:4px solid #d85a30;">
+    <div class="card-title">施策 A ― CPAが目標を超えている時</div>
+    <table>
+      <tr><th>状況</th><th>アクション</th></tr>
+      <tr><td>初出しCRで取れない</td><td>目標CPA×1.5〜2倍消化で取れなければ停止。次のCRへ。</td></tr>
+      <tr><td>取れた実績があるCRが悪化</td><td>4〜5日連続でNGになってから動く。広告セットごと複製して出し直す（リフレッシュ）。</td></tr>
+      <tr><td>CRを変えたい時</td><td>①そのまま出し直し ②デザイン変更 ③訴求軸変更 ④全く違うもの、の4パターンを同時投下して数値で選ぶ。</td></tr>
+      <tr><td>管理画面CPAが目標より極端に安い（1/3〜1/5以下や急落）</td><td>安すぎる。二重計測・クリック中の疑いあり。実数を必ず確認する。</td></tr>
+    </table>
+  </div>
+
+  <div class="card" style="border-left:4px solid #d85a30;">
+    <div class="card-title">施策 B ― FN移行率が目標を下回っている時</div>
+    <table>
+      <tr><th>要因の切り分け</th><th>アクション</th></tr>
+      <tr><td>LP側の問題</td><td>訴求・文言・構成を見直す。影響が最も大きい。</td></tr>
+      <tr><td>CR側の問題</td><td>FNへの温度感が合っていない訴求のCRに変更する。</td></tr>
+      <tr><td>乖離が60%を下回っている</td><td>LINE登録の導線改善（CTAアイコン追加・登録手順セクション追加・スクロール移動設定）。</td></tr>
+    </table>
+    <p style="font-size:12px; color:#888; margin-top:8px;">LP問題かCR問題かはアンケートや電話・LINEのやり取りで客層を確認してから判断する。闇雲に両方変えない。</p>
+  </div>
+
+  <div class="card" style="border-left:4px solid #d85a30;">
+    <div class="card-title">施策 C ― CVR・ROASが目標を下回っている時</div>
+    <table>
+      <tr><th>確認項目</th><th>アクション</th></tr>
+      <tr><td>広告側で変えられること</td><td>客層の質（どんな人が来ているか）を確認。オーディエンスの調整を検討。</td></tr>
+      <tr><td>広告側では変えられないこと</td><td>ファネル・クロージングの問題。プロモーターと数値を共有して連携。</td></tr>
+    </table>
+    <p style="font-size:12px; color:#888; margin-top:8px;">広告だけで売上を100%コントロールしようとしない。「どこの数値を変えれば売上が変わるか」を特定してから動く。</p>
+  </div>
+
+  <hr>
+  <h3>数値が悪化した時のチェック習慣</h3>
+  <div class="highlight-box info">
+    <p><strong>数値シートに変更履歴列を作り、施策を一言メモする。</strong></p>
+    <p style="font-size:13px; margin-top:6px;">例：「4/22 LINEアイコン追加」「4/9 日予算5,000→2,000に変更」。数値が悪化した時に「あの時何をしたか」を管理画面を見返さずに即特定できる。案件が増えるほど記憶に頼れなくなる。</p>
+  </div>
+</section>
+
+<!-- ===== ③ クリエイティブ・LP ===== -->
+<section id="creative">
+  <h2>クリエイティブ・LP戦略</h2>
+  <p class="lead">訴求軸の選択がCPAの大半を決める。デザインよりライティング。</p>
+
+  <h3>訴求軸（素急）の9分類</h3>
+  <div class="tag-list">
+    <span class="tag-item">ベネフィット</span>
+    <span class="tag-item">悩み・課題</span>
+    <span class="tag-item">社会的証明</span>
+    <span class="tag-item">特徴・差別化</span>
+    <span class="tag-item">ソリューション</span>
+    <span class="tag-item">クイズ・質問型</span>
+    <span class="tag-item">ストーリー</span>
+    <span class="tag-item">指摘・挑発型</span>
+    <span class="tag-item">ヘッドライン訴求</span>
+  </div>
+  <p style="font-size:12px; color:#888; margin-top:4px;">※ヘッドライン訴求はFV（ファーストビュー）で最も目に入るテキスト。LP全体の印象を決める最重要要素。</p>
+
+  <h3>静止画と動画の役割</h3>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">静止画が先</div>
+      <p style="font-size:13px;">まず静止画で訴求軸を検証。CPAが安く取れるか確認してから動画へ。当たった訴求の冒頭3秒に転用が効率的。コストをかける前に静止画でコンセプト検証。</p>
+    </div>
+    <div class="card">
+      <div class="card-title">動画が強い場面</div>
+      <p style="font-size:13px;">仕組みの説明が必要な案件は動画が有利。ただし内容が同じなら客層は変わらない。動画にすれば質が変わるわけではない。</p>
+    </div>
+  </div>
+
+  <h3>動画構成テンプレ</h3>
+  <div class="card">
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <h4>フック（冒頭3秒）</h4>
+          <p>新事実型・ターゲットコール型・問いかけ型・比較型などで引く。ここで止まらなければ全部無意味。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <h4>中盤：PAS構成</h4>
+          <p>「こういう悩みありますよね」→「今のままだと〇〇」→「実はこれで解決できます」。ここは案件の説明になるので使い回しやすい。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <h4>後半：CTA</h4>
+          <p>「詳しくはLINEで」「今だけ無料公開中」。シンプルに。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>横展開のルール</h3>
+  <div class="highlight-box">
+    <p><strong>横展開は「当たりが確定してから」かつ「LP変更なし」が前提。</strong></p>
+    <p style="font-size:13px; margin-top:6px;">LP変更後は横展開フェーズではなく再検証フェーズになる。横展開の方法：デザイン・色・文言を少し変える程度でOK。当たっていないものを横展開しても意味がない。</p>
+  </div>
+
+  <h3>精査の優先順位</h3>
+  <div class="card">
+    <p style="font-size:13px;"><strong>予算が寄っていないCRは精査しない。</strong>予算が寄っているものだけ精査対象にする。予算が寄っていないCRは「取れないCR」ではなく「まだ試せていないCR」。</p>
+    <p style="font-size:13px; margin-top:8px;">精査の単位：キャンペーン → 広告セット → 広告の順で大きい単位から落とし込む。</p>
+  </div>
+
+  <h3>審査対策</h3>
+  <div class="card">
+    <table>
+      <tr><th>リスクが高い表現</th><th>対処</th></tr>
+      <tr><td>金額の確約表現（「必ず〇万円稼げる」）</td><td>「個人差があります」注記を入れる。または削除。</td></tr>
+      <tr><td>現金・紙幣の画像</td><td>実績数値やグラフに差し替え。</td></tr>
+      <tr><td>月7桁・150万以上などの大きな金額表記</td><td>稼げる系と判断される。削除して再審査。</td></tr>
+    </table>
+    <p style="font-size:12px; color:#888; margin-top:8px;">戦略：まず文言だけで審査テスト → 通過確認後にデザイン依頼の順番。審査NGの可能性はクライアントに事前ジャブ打ちしておく。</p>
+  </div>
+
+  <hr>
+  <h2 style="margin-top:0;">LP戦略</h2>
+  <p class="lead">LPに書いてある人が来る。これが全ての前提。</p>
+
+  <div class="highlight-box danger">
+    <p><strong>LPに書いてある人が来る。</strong></p>
+    <p style="font-size:13px; margin-top:6px;">ネガティブな金銭訴求を書けばその層が来る。訴求内容がそのままオーディエンスを決める。「誰に向けたものか」を明確に書くと客層が改善することが多い。</p>
+  </div>
+
+  <h3>売れていない時のLP方針</h3>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">やるべき方向（具体化・ディープ化）</div>
+      <p style="font-size:13px;">売れていない = 見込みの高い客が来ていない可能性が高い。LPをより具体的・濃くして対象者を絞る。</p>
+    </div>
+    <div class="card">
+      <div class="card-title">やってはいけない方向（ライト化）</div>
+      <p style="font-size:13px;">売れていないのにLPをライトにするのは逆効果。ライト化は売れているフェーズで予算を拡大したい時の施策。</p>
+    </div>
+  </div>
+
+  <h3>LINE乖離対策（CTAタップ数と実登録数のズレ）</h3>
+  <div class="card">
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <h4>CTAボタンにLINEアイコンと文言を追加</h4>
+          <p>「LINEで友達追加する」と明記。押した先がLINEだと分かればクリック中が減る。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <h4>登録手順セクションを追加</h4>
+          <p>ボタンを押した後の2ステップをスクショ付きで記載。安心感を与えて離脱を防ぐ。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <h4>ファーストビューのCTAをスクロール移動に設定</h4>
+          <p>FVのCTAを押すと下の2個目のCTAに飛ばす設定。2回クリックさせることでクリック中を排除する。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ④ 出稿・チェックリスト ===== -->
+<section id="ops">
+  <h2>出稿・チェックリスト</h2>
+  <p class="lead">手順書と確認リストをまとめたタブ。出稿前・運用中の両方で使う。</p>
+
+  <h3>出稿までの全体手順（STEP①〜⑤）</h3>
+
+  <div class="step-block">
+    <div class="step-label">STEP ①</div>
+    <div class="step-title">アカウント作成</div>
+    <ul class="checklist">
+      <li>広告アカウントを作成する（ビジネスマネージャーに紐付け）</li>
+      <li>出稿に必要な情報を登録する（支払い情報・タイムゾーン・通貨）</li>
+      <li>広告運用メンバーの権限を共有する</li>
+      <li>Facebookページ・Instagramアカウントを連携する</li>
+      <li>認知広告（500円/日）を先行稼働させてアカウントの信頼残高を積む</li>
+    </ul>
+  </div>
+
+  <div class="step-block">
+    <div class="step-label">STEP ②</div>
+    <div class="step-title">戦略設計</div>
+    <ul class="checklist">
+      <li>ターゲットを定義する（性別・年齢・職業・悩み・試行・失敗理由・解決理由）</li>
+      <li>LP・CRの方向性を決める（訴求軸の候補を複数出す）</li>
+      <li>必要に応じてフェーズ分けする（検証期・拡大期・スケール期）</li>
+      <li>分岐パターンを想定する（CPA達成・未達のそれぞれの次の手）</li>
+      <li>試算シミュレーションを作成してクライアントと数値合意する</li>
+      <li>デッドラインを設定する（期間 or 消化金額）</li>
+    </ul>
+  </div>
+
+  <div class="step-block">
+    <div class="step-label">STEP ③</div>
+    <div class="step-title">制作</div>
+    <ul class="checklist">
+      <li>訴求軸（素急）を決める（8分類から複数候補を選ぶ）</li>
+      <li>CRの下書きを作成する（静止画：8〜12枚を一斉制作）</li>
+      <li>広告テキスト・見出しを作成する（1CR1テキスト1見出しの対応）</li>
+      <li>ターゲットを決める（ヒアリング内容をベースに設定。AIに聞いても平均的な答えしか出ない）</li>
+      <li>Facebookページの週次投稿を準備する</li>
+      <li>Instagramの投稿を準備する（広告を見た人の約60%がアカウントを確認しに来る）</li>
+    </ul>
+  </div>
+
+  <div class="step-block">
+    <div class="step-label">STEP ④</div>
+    <div class="step-title">計測構築</div>
+    <ul class="checklist">
+      <li>MetaピクセルIDを確認する</li>
+      <li>GTMを作成してタグを反映する（CompleteRegistrationイベントの発火を確認）</li>
+      <li>パラメータを設定する（広告用URLとSNS・他流入URLを必ず分離する）</li>
+      <li>リダイレクトページ経由のCV計測を設定する（CTAクリックより安定）</li>
+      <li>計測シートを設定する（数値転記ルールと変更履歴列を作成）</li>
+      <li>ドメイン認証を完了させる（緑のVerified表示・自動ウェブサイトマッチングON）</li>
+      <li>二重計測になっていないかを確認する（GTM＋Pixelのダブル発火に注意）</li>
+    </ul>
+  </div>
+
+  <div class="step-block">
+    <div class="step-label">STEP ⑤</div>
+    <div class="step-title">広告出稿</div>
+    <ul class="checklist">
+      <li>審査リスクのある表現をLP・CRから確認・修正する</li>
+      <li>CRを計測シートに入力する（命名ルール：LP名＋ターゲット名＋CR番号）</li>
+      <li>計測リンク（パラメータ付きURL）を発行する</li>
+      <li>キャンペーン・広告セット・広告を設置する</li>
+      <li>疎通チェックをする（テスト配信・イベント発火確認）</li>
+      <li>広告を入稿する（審査にかける）</li>
+      <li>先に文言だけで審査テストを行い、通過後にデザイン依頼する順番を守る</li>
+    </ul>
+  </div>
+
+  <hr>
+  <h3>週次・運用チェックリスト</h3>
+
+  <div class="step-block">
+    <div class="step-label">数値確認</div>
+    <div class="step-title">毎週確認する数値</div>
+    <ul class="checklist">
+      <li>CPA（実数）：目標ラインをクリアしているか（キャンペーン→セット→広告の順で確認）</li>
+      <li>管理画面CPAが目標より極端に安くないか（1/3〜1/5以下や急落の場合は二重計測を疑う）</li>
+      <li>管理画面CVと実数の乖離：CTAタップ数の60%以上が実登録されているか</li>
+      <li>FN1→FN2移行率と移行単価：両方が目標内か</li>
+      <li>CVR・ROAS：後ろの数値まで繋がっているか</li>
+      <li>各CRの消化金額：判断消化額（目標CPA×1.5〜2倍）に達しているか</li>
+      <li>予算が寄っていないCRは精査しない</li>
+      <li>変更履歴を数値シートに記録する（一言でOK）</li>
+    </ul>
+  </div>
+
+  <div class="step-block">
+    <div class="step-label">CR精査・停止判断</div>
+    <div class="step-title">CRの止め時・差し替え判断</div>
+    <ul class="checklist">
+      <li>初出しCRで目標CPA×1.5〜2倍消化して取れなければ停止</li>
+      <li>取れた実績があるCRは4〜5日連続でNGになってから差し替えを検討</li>
+      <li>停止する場合は上書きせず「停止」にする（削除すると運用履歴が見えなくなるため。削除後に履歴を見る方法はあるが手間がかかる）</li>
+      <li>疲弊が見えてきたら次のセットを別で育て始める（延命ではなく後継者育成）</li>
+    </ul>
+  </div>
+
+  <div class="step-block">
+    <div class="step-label">予算増額・セット複製</div>
+    <div class="step-title">予算を動かす時のルール</div>
+    <ul class="checklist">
+      <li>増額は1日最大20%以内。24時間おいて安定確認後に再増額。</li>
+      <li>急に大きく増やしたい場合は元セットを触らず複製セットを別に作る</li>
+      <li>取れているセットに新CRを追加しない（最適化が崩れる）</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== ⑤ 新規案件・ヒアリング ===== -->
+<section id="newclient">
+  <h2>新規案件・ヒアリング</h2>
+  <p class="lead">案件の入口設計。ここが甘いと後で全部ズレる。</p>
+
+  <h3>受けてはいけない案件</h3>
+  <div class="highlight-box danger">
+    <p><strong>以下に1つでも当てはまる案件は受注前に必ず確認する。</strong></p>
+    <p style="font-size:13px; margin-top:8px;">① LP・ファネルを一切変えようとしないクライアント<br>② コンバージョンが目的の案件で月予算10万以下（母数が溜まらず何も分からないまま終わる。認知目的など別の目標であれば別途判断）<br>③ 商品力がない・ターゲットが「誰でも」になっている案件</p>
+  </div>
+
+  <h3>目標CPA設定の逆算フロー</h3>
+  <div class="card">
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <h4>シミュレーション表を使って目標ラインを逆算する</h4>
+          <p>案件ごとにファネル構造は異なるため、計算式を固定しない。シミュレーション表を使い、案件に合わせて丁寧に逆算する。数値をこちらで勝手に決めるのも良くない。運用代行のみの場合はFN移行率・成約率等はクライアントと必ず調整・合意する。プロモーション全体を請け負っている場合は自社で設定してよい。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <h4>1日の最低消化額を確認する</h4>
+          <p>月予算÷30日＝日予算。日予算が目標CPAを下回ると1日0CVが続き最適化が進まない。最低でも1日1CVが取れる日予算が必要。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <h4>CPA以外の基準値も設定する</h4>
+          <p>「〇件の申し込みがあればOK」という後ろの基準値も決める。CPAだけでは拡大提案の根拠にならない。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">4</div>
+        <div class="flow-content">
+          <h4>デッドラインを設定する</h4>
+          <p>「1ヶ月経っても未達」または「〇万円消化しても0件」のどちらかを事前に決める。グダグダ続けて負債だけ積むのが最悪のパターン。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>ヒアリングの重点項目</h3>
+  <div class="card">
+    <table>
+      <tr><th>項目</th><th>質問内容</th><th>目的</th></tr>
+      <tr><td><strong>C：悩み</strong></td><td>ターゲットはどんな悩みを持っているか？</td><td>訴求軸の候補になる</td></tr>
+      <tr><td><strong>D：試行</strong></td><td>その悩みに対してどう解決しようとしてきたか？</td><td>比較軸・競合把握</td></tr>
+      <tr><td><strong>E：失敗理由</strong></td><td>なぜその方法では解決しなかったか？</td><td>差別化ポイント</td></tr>
+      <tr><td><strong>F：解決理由</strong></td><td>なぜこの商品ならその悩みが解決できるか？</td><td>そのままLP文言・訴求軸になる</td></tr>
+    </table>
+    <p style="font-size:12px; color:#888; margin-top:8px;">クライアントの熱量が上がった回答箇所 = そのまま訴求軸になる。録画を見返して抜き出す。</p>
+  </div>
+
+  <h3>初回で必ず確認する準備物</h3>
+  <ul class="checklist">
+    <li>広告アカウント（有無・共有or作成）</li>
+    <li>広告用LP・サンクスページ（リダイレクトページ）</li>
+    <li>他流入と広告URLを分けられるか（パラメータ設定）</li>
+    <li>PixelコードとGTMタグの挿入可否（デザイナーの有無確認）</li>
+  </ul>
+
+  <h3>初回で先に伝えておくこと</h3>
+  <div class="card">
+    <table>
+      <tr><th>伝えること</th><th>理由</th></tr>
+      <tr><td>SNSと広告URLを分離してほしい</td><td>計測がズレる。クライアントは知らないことが多い。</td></tr>
+      <tr><td>審査リスクのジャブ打ち</td><td>「LP次第では審査が通りにくい文言があるかもしれません」と先に言っておくとLP変更をお願いしやすくなる。</td></tr>
+      <tr><td>タグ挿入の必要性</td><td>デザイナーがいる場合は費用・時間がかかる可能性を事前通知。</td></tr>
+    </table>
+  </div>
+
+  <h3>媒体選定の考え方</h3>
+  <div class="card">
+    <table>
+      <tr><th>媒体</th><th>向いている案件</th><th>注意点</th></tr>
+      <tr><td>Meta</td><td>無型商材・B2C全般。発見型・オプトイン系。</td><td>審査は比較的通りやすい。</td></tr>
+      <tr><td>YouTube</td><td>仕組みの説明が長い案件・動画で教育が必要な案件。</td><td>無型商材は公式アウト扱い。審査が厳しい。</td></tr>
+      <tr><td>Google検索</td><td>「今すぐ欲しい」意図がある案件。指名検索の刈り取り。</td><td>「売りたい人に届ける」のは苦手。</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ===== ⑥ 参考資料 ===== -->
+<section id="ref">
+  <h2>参考資料</h2>
+  <p class="lead">アルゴリズムの最新動向と、杉江さんコンサル全16回の動画リンク。</p>
+
+  <h3>Metaアルゴリズム最新動向（アンドロメダ以降）</h3>
+  <div class="highlight-box">
+    <p><strong>「誰に届けるか」→「どんな広告を作るか」にシフト。クリエイティブで届く人を決める時代になった。</strong></p>
+  </div>
+
+  <div class="card">
+    <table>
+      <tr><th>項目</th><th>旧（〜2024初頭）</th><th>新（アンドロメダ以降）</th></tr>
+      <tr><td>ターゲット設定</td><td>細かく絞る</td><td>広め設定でOK。AIに任せる。</td></tr>
+      <tr><td>CR数</td><td>少なくてもOK</td><td>1セット8〜12個が理想</td></tr>
+      <tr><td>横展開</td><td>有効</td><td>広範囲な単純複製はAIが同質と判定して効果薄。ただし当たり訴求が確定した後は原則07に準拠して4パターン検証で展開する。</td></tr>
+      <tr><td>AIが予算を寄せた</td><td>そのCRが優秀の証明</td><td>単に安く取れただけの可能性あり。数値で判断。</td></tr>
+    </table>
+  </div>
+
+  <hr>
+  <h3>杉江さんコンサル 全16回 動画アーカイブ</h3>
+
+  <div class="card">
+    <table>
+      <tr><th>回</th><th>収録日</th><th>主なテーマ</th><th>動画</th></tr>
+      <tr><td>第1回</td><td>2025/10/28</td><td>Meta広告の基本構造・CPAの考え方・数値を見る順番</td><td><a href="https://drive.google.com/file/d/1-lG9EB9s7WoyjiH2TVhRZH-vn12GPv76/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第2回</td><td>2025/10/31</td><td>クリエイティブの訴求軸（素急）・静止画から動画へ</td><td><a href="https://drive.google.com/file/d/1gOX-3WKO1Ak_fB1mhS9dOY-TAtbCKN4K/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第3回</td><td>2025/11/07</td><td>ターゲット設定・オーディエンスの考え方</td><td><a href="https://drive.google.com/file/d/10ytW-1LZBzRHi1o-j6VXhDsJRmTpDlIP/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第4回</td><td>2025/11/13</td><td>LPとファネルの関係・FN移行率の見方</td><td><a href="https://drive.google.com/file/d/1Nl04cBHJ9od5ESvx_h6Li_JM9vDIcae8/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第5回</td><td>2025/11/20</td><td>クラファン案件 初回レビュー・数値精査の実践</td><td><a href="https://drive.google.com/file/d/15ir2Au32AP9odZJ5KV7ki7_vHiqIfw9d/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第6回</td><td>2025/11/28</td><td>クリエイティブのPDCA・横展開のルール</td><td><a href="https://drive.google.com/file/d/1D9Ck6fSlYvPzCJoAyJFbFcXcCopEAsY5/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第7回</td><td>2025/12/08</td><td>予算増額の考え方・セット複製のルール</td><td><a href="https://drive.google.com/file/d/1w6S4UrWP3CorUU-OMh_eOx_PmpA6IJui/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第8回</td><td>2025/12/19</td><td>アンドロメダアルゴリズム対応・CR量産の考え方</td><td><a href="https://drive.google.com/file/d/1Vgch2BYc-QNpFHo5P0Q-Z-N2p5Nz9FGT/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第9回</td><td>2026/01/15</td><td>かれいどスコープ案件 立ち上げ・計測設定</td><td><a href="https://drive.google.com/file/d/1mge7JXqxDEcIHkayUhtSgC5J7MnCGbp8/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第10回</td><td>2026/01/29</td><td>管理画面と実数の乖離・LINE登録導線の改善</td><td><a href="https://drive.google.com/file/d/1Iir_HteMqpOt1hxSlF7z1Pd5as8pr-lF/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第11回</td><td>2026/02/12</td><td>LP戦略・売れていない時の対処法</td><td><a href="https://drive.google.com/file/d/100TqH1hgTcp_mPggMyGlTvk9uRwgNprz/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第12回</td><td>2026/02/24</td><td>新規案件の立ち上げ方・目標CPA逆算フロー</td><td><a href="https://drive.google.com/file/d/1OzaOgETGYb3RhrJvDKMca9zJGR4oXFXm/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第13回</td><td>2026/03/09</td><td>媒体ポートフォリオ・YouTube vs Meta</td><td><a href="https://drive.google.com/file/d/1-LBq3ThVRETASr2E0opJJYXnlQwy9yE6/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第14回</td><td>2026/03/23</td><td>拡大フェーズの考え方・オーディエンスの枯れ対策</td><td><a href="https://drive.google.com/file/d/1VVESJ6iWEEZ1lN_mNdc78StFeelGkU6_/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第15回</td><td>2026/04/09</td><td>社内メンバーへの知見移転・引き継ぎ設計</td><td><a href="https://drive.google.com/file/d/1UvF52MsRr0GoC8B3c_uN4Vai61CDwt4f/view" target="_blank">▶ 視聴</a></td></tr>
+      <tr><td>第16回</td><td>2026/04/23</td><td>最終回：総まとめ・自走レベル評価・今後の展開</td><td><a href="https://drive.google.com/file/d/1EPOIHfhvnAfFgIdaQ1HnLbBaI7PSw3IU/view" target="_blank">▶ 視聴</a></td></tr>
+    </table>
+  </div>
+</section>
+
+</div>
+
+<script>
+function show(id, link) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  link.classList.add('active');
+  event.preventDefault();
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
